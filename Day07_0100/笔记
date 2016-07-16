@@ -1,0 +1,247 @@
+------------------jsp先导课程-------------------------
+1.jsp三大指令
+  page指令
+  include指令
+  taglib指令
+2. jsp是一种和  php还有asp.net 并行的开发动态网站的技术
+3. 网站开发中，一种很重要的编程模型  ------>请求(request)和响应(reponse)
+
+4.内置对象:不用new，就可以直接使用的对象   他是由容器创建的。
+
+  out
+  request
+  response
+  session
+  application
+  
+  page
+  config
+  pageContext
+  exception
+ 
+ 5.Tomcat一款解析jsp页面的一个容器，其他的web服务器
+   WebLogic
+   Jboss
+   Jetty
+   IIS（asp.net  微软提供的）
+   Apache
+   
+ 6. Tomcat组成目录架构
+    lib
+    conf
+    work  ----->servlet(java类)  实现了一个特定的接口或者是抽象类
+    webapps  发布的应用存放的位置
+    log
+    temp
+    
+ 7.myeclipse 开发环境Web工程目录
+    WEB-INF
+       lib
+       web.xml
+       
+ 8.jsp页面元素
+  html标签
+  小脚本 （<%  javacode%>）
+  表达式  （<%=%>）可以将内容输出到页面
+  声明      <%!%>
+  指令
+  注释
+ ----------------------------------------------------------------------Day02--------------------------、
+ 、1. 内置对象
+   request
+     方法：getParameter("txtName"):获取和页面上的name属性对象的value值   返回String
+     
+       getParameterValues() :字符串数组
+    
+  2.解决乱码
+     post乱码解决方案
+     request.setCharactorEncoding("utf-8");
+     
+     get乱码方案解决
+    String st=new String(getParameter("txtName").getBytes("iso-8859-1"),"utf-8");
+    
+    
+   3.转发和重定向区别
+     1.请求次数，     转发1次，重定向2次
+     2.url地址角度     转发是中间页面地址，重定向，最后页面地址
+     3.携带数据角度   转发携带，      重定向不携带数据。
+     
+   4.session讲解，一次会话
+     给session域中扔值
+      session.setAttribute("key","value");
+      
+    取值
+    Object oo=session.getAttribute("key");
+    
+    5.response 响应对象
+       --->addCookie(new Cookie());
+       --->sendRedirect("目标地址");
+     
+     
+    6.为什么要给session中放入用户名？
+    
+    解析：可以将值保留到域中，以便下次访问。
+    
+    7.include
+      <%@ include file="jsp文件的路径"%>  
+      静态导入还是动态导入
+      答案是静态导入，
+      如何书写动态导入代码      
+      <jsp:include>
+    
+    	区别：静态导入，1个
+    	    动态导入  ，2个类
+      
+ ---------------------------Day03 COokie 和Application------------------------------------------------------------------
+ 1.Application对象
+   Application作用域     
+   session作用域
+   request作用域
+   
+ 2.如何写入cookie
+   用：
+  给cookie设置失效时间
+    Cookie cookie=new Cookie("Myuser","admin");
+    cookie.setMaxAge(60*60*24);
+    response.addCookie();
+   
+   
+   
+   如何获取？？？？？
+   Cookie[] cookies=request.getCookies(); 
+   //特定cookie  对比 Myuser
+   for(int i=0;i<cookies.length;i++){
+      if(cookies[i].getName().equals("Myuser")){
+         //定向success
+         
+      }
+   }
+   
+   3.servlet是什么？
+   Servlet就是一个实现了特定接口或者父类的java类。
+   Servlet 是一个 Java程序，是在服务器上(Tomcat容器中)运行以处理客户端请求并做出响应的程序.
+	Servlet的职责就是接收客户端的请求并且对请求作出响应.
+
+   4.servlet的入门案例
+   方案一：
+       FirstServlet implements  Servlet{
+       
+         init
+         
+         destory
+         
+         
+         service
+        
+       }
+   
+  方案二：
+    普通类继承GenericServlet类
+      重写他的service方法
+    
+ 方案三：HttpServlet
+ 
+   service在这个类中，不再进行真正的请求处理工作，而交给了另外一个方法doXXX()
+   。这里的service  调度  和 分发的作用。
+   
+   
+   
+   地铁。
+   张靓颖：
+
+   HttpServlet这个类不再关注service，转向了doXXXX系列方法。
+   
+   Rest
+   
+ -----------------------------
+ 1. servlet：用于处理客户端的请求和对请求作出响应的一个类，
+    这个类实现Servlet接口。
+     继承  GenericServlet抽象类
+      HttpServlet抽象类
+ 2. 初始化Init()  
+          销毁  destory()
+        service() 请求一次，执行一次
+ 3.servlet注意点。单独定义一个类，外界要想请求该类，需要在webx.xml中进行配置。
+  <servlet>
+     <servlet-name>逻辑名称</servlet-name>
+     <servlet-class>类全名</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>逻辑名称</servlet-name>
+    <url-pattern>/first</url-pattern>
+  </servlet-mapping>
+  
+  4.mvc模式  组件
+    M：Modle
+    V：View
+    C：Controller
+    
+    最重要的就是控制器Controller
+    
+  5.mvc和三层有关系吗？
+   没有关系的。
+   
+   6.实现的是新闻发布系统  首页  所有新闻标题和发布时间的显示
+   1.DB中news表已经存在
+     Web架构搭建完毕
+      
+      搭建分层
+        entity
+        dao 
+          impl
+        servlet
+        //三件事情
+          1.1使用dao的方法，将泛型集合握到手中
+          1.2将泛型放入request作用域，以方便该泛型数据可以在View视图中访问
+          1.3转发到指定的页面
+   2.View视图：
+       无非就是  
+       List<News> list=(List<News>)request.getAttribute("list");
+      后续的operation
+
+   
+   
+  
+  
+  
+  
+    
+ 
+      
+  
+      
+      
+      
+    
+     
+     
+     
+    
+         
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  
+  

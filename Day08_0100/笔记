@@ -1,0 +1,55 @@
+------------------------------Day08
+1.EL：表达式语言
+减少页面中java代码出现的频率。
+取出   作用域中  数据 展示在页面上
+
+
+2.JSTL：标准标签库
+  就是一系列标签
+  <c:set/>
+  <c:if>
+  </c:if>
+  
+  <c:forEach>
+  </c:forEach>
+ 
+ 3.Java实体类 ==JavaBean（字段私有，get/set方法，并且有一个无参构造）
+ 
+ 4.${域中的key值}
+ Scope:作用域
+ requestScope
+ 
+ 
+ 5.el中的value值
+   User
+   List<User>
+   Map<String,User>
+ 6.jstl
+  1.引入taglib指令   standard.jar jstl.jar   c.tld fmt.tld why?
+  解析:jstl其实就是 后台类+描述文件
+  
+ 
+ 7.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
