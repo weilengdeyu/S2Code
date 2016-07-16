@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name></display-name>
+  <servlet>
+    <servlet-name>doIndexServlet</servlet-name>
+    <servlet-class>cn.happy.easybuy.servlet.doIndexServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>doProductServlet</servlet-name>
+    <servlet-class>cn.happy.easybuy.servlet.doProductServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>doRegisterServlet</servlet-name>
+    <servlet-class>cn.happy.easybuy.servlet.doRegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CommentServlet</servlet-name>
+    <servlet-class>cn.happy.easybuy.servlet.CommentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>doProductCategoryServlet</servlet-name>
+    <servlet-class>cn.happy.easybuy.servlet.doProductCategoryServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>doCartShoppingServlet</servlet-name>
+    <servlet-class>cn.happy.easybuy.servlet.doCartShoppingServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>getCodeServlet</servlet-name>
+    <servlet-class>cn.happy.easybuy.servlet.getCodeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>doLoginServlet</servlet-name>
+    <servlet-class>cn.happy.easybuy.servlet.doLoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>doAddressServlet</servlet-name>
+    <servlet-class>cn.happy.easybuy.servlet.doAddressServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>doGiveMoneyServlet</servlet-name>
+    <servlet-class>cn.happy.easybuy.servlet.doGiveMoneyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>doOrderServlet</servlet-name>
+    <servlet-class>cn.happy.easybuy.servlet.doOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>NewsServlet</servlet-name>
+    <servlet-class>cn.happy.easybuy.servlet.NewsServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>cn.happy.easybuy.servlet.UserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>doProductClassServlet</servlet-name>
+    <servlet-class>cn.happy.easybuy.servlet.doProductClassServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>doLoginOut</servlet-name>
+    <servlet-class>cn.happy.easybuy.servlet.doLoginOut</servlet-class>
+  </servlet>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/505.jsp</location>
+  </error-page>
+  <servlet-mapping>
+    <servlet-name>doIndexServlet</servlet-name>
+    <url-pattern>/servlet/doIndexServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>doProductServlet</servlet-name>
+    <url-pattern>/servlet/doProductServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>doRegisterServlet</servlet-name>
+    <url-pattern>/servlet/doRegisterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CommentServlet</servlet-name>
+    <url-pattern>/servlet/CommentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>doProductCategoryServlet</servlet-name>
+    <url-pattern>/servlet/doProductCategoryServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>doCartShoppingServlet</servlet-name>
+    <url-pattern>/servlet/doCartShoppingServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>getCodeServlet</servlet-name>
+    <url-pattern>/servlet/getCodeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>doLoginServlet</servlet-name>
+    <url-pattern>/servlet/doLoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>doAddressServlet</servlet-name>
+    <url-pattern>/servlet/doAddressServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>doGiveMoneyServlet</servlet-name>
+    <url-pattern>/servlet/doGiveMoneyServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>doOrderServlet</servlet-name>
+    <url-pattern>/servlet/doOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>NewsServlet</servlet-name>
+    <url-pattern>/servlet/NewsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/servlet/UserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>doProductClassServlet</servlet-name>
+    <url-pattern>/servlet/doProductClassServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>doLoginOut</servlet-name>
+    <url-pattern>/servlet/doLoginOut</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>servlet/doIndexServlet</welcome-file>
+  </welcome-file-list>
+</web-app>
