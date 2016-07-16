@@ -1,0 +1,165 @@
+----------------------Day02内置对象-----
+1.内置对象
+  out
+  request
+  response
+  session
+  application
+  page
+  pageContext
+  config
+  exception
+2.request如何解析用户表单提交过来的Data。
+String name=request.getParameter("userName");
+--------------------------------------------------
+<form>
+   <input type="text" name="userName"/>
+</fomr>
+  
+3.给request作用域。
+request.setAttribute("key",Object obj);
+List<Student> list=(List<Student>)request.getAttribute();
+
+4.转发和重定向
+  3个角度
+   请求次数：
+       重定向2次，转发1次
+       转发相当于服务器内部的一个行为，客户端根本无法感知到这个动作。
+ URL地址
+      重定向最终页面，转发中间页面
+ 数据
+   重定向不携带数据，转发携带数据
+   
+5.response用来对客户端请求作出响应的。
+
+6.session技术，一次会话
+session.setAttribute("uname","张三");
+session.setAttribute("uname",user);
+认证通过，用户才有权限访问其他的业务模块。
+Add     
+Edit 
+Delete
+Select   所有学生
+
+ 注销：
+  第一件.清空session
+  第二件. 跳转到登录
+
+---------
+1.jsp中的三大指令
+  page
+  include
+  xxxx
+
+2.application 内置对象
+
+
+
+3.对象的作用域
+ pageContext：当前页面内有效
+ request：一次请求内有效
+ session: 一次会话（1次会话==N次请求）
+ application: 整个Web工程，跨浏览器
+
+
+写写自己的网上聊天室
+blogs
+
+
+4.cookie（小甜饼：曲奇）
+  可无可无
+  1.cookie保存在客户端
+  2.cookie只能保存字符串
+  3.敏感信息不要保存到cookie中。
+  4.只存储用户名。
+    Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+    
+	Accept-Encoding:gzip, deflate, sdch
+	
+	Accept-Language:zh-CN,zh;q=0.8
+	
+	Cache-Control:max-age=0
+	
+	Connection:keep-alive  长连接 1.1
+	
+	Cookie:uname=1; JSESSIONID=1018CCA7E26B09E5DE9C0BDFF2C50F59
+	Host:happy-server:8080
+	Upgrade-Insecure-Requests:1
+	User-Agent:Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.112 Safari/537.36
+	Name
+	login.jsp
+	1 requests ❘ 644 B transferred ❘ Finish: 6 ms ❘ DOMContentLoaded: 31 ms ❘ Load: 31 ms
+	
+	Console
+
+--Cookie
+
+ 键	            值
+Cookie	JSESSIONID=6507DC661ED10E9BC3773F7736B8AF01
+
+﻿
+
+---------
+include讲解
+  问题：只能写的相对路径
+  <%@ include file="/tool/permission.jsp"%>
+  静态包含
+  动态包含 <jsp:include>
+ 2.session   Logout
+ 单独抽取了一个Loginout.jsp
+       清除session
+       跳转
+  
+  3.application
+     统计网站的访问次数
+  Object类型不能转成值类型，要转成值类型的包装类
+  
+  4.作用域
+   pageContext
+   request
+   session
+   application
+   
+   5.cookie
+   实现session基础。cookie保存着sessionid，每次请求都要携带该网站的sessionid，与server上的
+   sessionid匹配，最终判定用户的状态（登录的，可以进行后续业务操做）
+   
+   
+   5.cookie分类
+      会话级别的cookie
+        没有设置setMaxAge(60);
+      硬盘级别的cookie   
+    
+    
+    cookie不是内置对象，因为他要new
+    
+    必须通过response.addCookie(cookie);
+    
+    cookie形成在server端，存储在client端
+    
+   
+  
+  
+  
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
